@@ -193,6 +193,47 @@ module VirtualBox
         Global.global(true).vms
       end
 
+      def create(name, os_type, settings_file=nil, id=nil, force_overwrite=false)
+        if check_os_type(id)
+          new(Lib.lib.virtualbox.create_machine(settings_file, name, os_type, id, force_overwrite))
+        end
+      end
+
+      # Creates a new machine, and registers it once all modifications are
+      # made. The VM object is returned if the machine is successfully
+      # registered, otherwise nil is returned.
+      #
+      # If a block is given, a VM is returned for modification before
+      # the machine is registered. Do not save the VM.
+      #
+      # @param [String] name The name of the VM
+      # @param [String] os_type Optional. The type of the operating system
+      #                         (e.g. Ubuntu_64, Fedora, WindowsXP, Other).
+      #                         Default is "Other".
+      # @param [String] settings Optional. The file where the .vbox is to
+      #                          be stored. If omitted or nil, it is
+      #                         constructed using compose_machine_filename
+      #                         and is equal to the default path name/name.vbox
+      # @param [String] id Optional. The UUID for the new machine. If omitted
+      #                    or nil, one is generated.
+      # @param [Boolean] overwrite Optional. Permits the overwriting of a VM
+      #                            with the same name. Default is false.
+      # @return [VM] The newly created VM if successful, otherwise nil
+      def create(name, os_type=nil, settings=nil, id=nil, overwrite=false, &block)
+        #Should check VirtualBox::Lib.lib.virtualbox.guest_os_types for validity.
+        m = VirtualBox::Lib.lib.virtualbox.create_machine(settings, name, os_type, id, overwrite)
+        vm = VirtualBox::VM.new(m)
+        yield(vm) if block_given?
+        VirtualBox::Lib.lib.virtualbox.register_machine(m)
+        vm.save
+        vm
+      rescue VirtualBox::Exceptions::ObjectNotFoundException
+        nil
+      rescue VirtualBox::Exceptions::COMException
+        # NOTE: This only happens on JRuby/Windows
+        nil
+      end
+
       # Finds a VM by UUID or registered name and returns a
       # new VM object. If the VM doesn't exist, will return `nil`.
       #
