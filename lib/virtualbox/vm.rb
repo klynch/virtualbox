@@ -221,15 +221,15 @@ module VirtualBox
       # @return [VM] The newly created VM if successful, otherwise nil
       def create(name, os_type=nil, settings=nil, id=nil, overwrite=false, &block)
         #Should check VirtualBox::Lib.lib.virtualbox.guest_os_types for validity.
-        m = VirtualBox::Lib.lib.virtualbox.create_machine(settings, name, os_type, id, overwrite)
-        vm = VirtualBox::VM.new(m)
+        m = Lib.lib.virtualbox.create_machine(settings, name, os_type, id, overwrite)
+        vm = new(m)
         yield(vm) if block_given?
-        VirtualBox::Lib.lib.virtualbox.register_machine(m)
+        Lib.lib.virtualbox.register_machine(m)
         vm.save
         vm
-      rescue VirtualBox::Exceptions::ObjectNotFoundException
+      rescue Exceptions::ObjectNotFoundException
         nil
-      rescue VirtualBox::Exceptions::COMException
+      rescue Exceptions::COMException
         # NOTE: This only happens on JRuby/Windows
         nil
       end
