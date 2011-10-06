@@ -193,12 +193,6 @@ module VirtualBox
         Global.global(true).vms
       end
 
-      def create(name, os_type, settings_file=nil, id=nil, force_overwrite=false)
-        if check_os_type(id)
-          new(Lib.lib.virtualbox.create_machine(settings_file, name, os_type, id, force_overwrite))
-        end
-      end
-
       # Creates a new machine, and registers it once all modifications are
       # made. The VM object is returned if the machine is successfully
       # registered, otherwise nil is returned.
@@ -208,16 +202,14 @@ module VirtualBox
       #
       # @param [String] name The name of the VM
       # @param [String] os_type Optional. The type of the operating system
-      #                         (e.g. Ubuntu_64, Fedora, WindowsXP, Other).
-      #                         Default is "Other".
+      #   (e.g. Ubuntu_64, Fedora, WindowsXP, Other). Default is "Other".
       # @param [String] settings Optional. The file where the .vbox is to
-      #                          be stored. If omitted or nil, it is
-      #                         constructed using compose_machine_filename
-      #                         and is equal to the default path name/name.vbox
+      #   be stored. If omitted or nil, it is constructed using
+      #   compose_machine_filename which is defaultMachineFolder/name/name.vbox
       # @param [String] id Optional. The UUID for the new machine. If omitted
-      #                    or nil, one is generated.
+      #   or nil, one is generated.
       # @param [Boolean] overwrite Optional. Permits the overwriting of a VM
-      #                            with the same name. Default is false.
+      #   with the same name. Default is false.
       # @return [VM] The newly created VM if successful, otherwise nil
       def create(name, os_type=nil, settings=nil, id=nil, overwrite=false, &block)
         #Should check VirtualBox::Lib.lib.virtualbox.guest_os_types for validity.
@@ -501,6 +493,40 @@ module VirtualBox
       app.add_machine(self, options)
       app.export(&block)
     end
+
+    # Creates a clone of the machine, either as a full clone (which means
+    # creating independent copies of the hard disk media, save states and so
+    # on), or as a linked clone (which uses its own differencing media,
+    # sharing the parent media with the source machine).
+    #
+    # Clone Modes:
+    # :machine_state             Clone the state of the selected machine.
+    # :machine_and_child_states  Clone the state of the selected machine and
+    #                            its child snapshots if present.
+    # :all_status                Clone all states (including all snapshots)
+    #                            of the machine, regardless of the machine
+    #                            object used.
+    #
+    # Clone Options:
+    # :link             Create a clone VM where all virtual disks are linked
+    #                   to the original VM.
+    # :keep_all_macs    Don't generate new MAC addresses of the attached
+    #                   network adapters.
+    # :keep_nat_macs    Don't generate new MAC addresses of the attached
+    #                   network adapters when they are using NAT.
+    # :keep_disk_names  Don't change the disk names.
+    # def clone_to(name, clone_mode=:machine_state, clone_options=[], settings=nil, id=nil, overwrite=false, &block)
+    #   m = VirtualBox::Lib.lib.virtualbox.create_machine(settings, name, nil, id, overwrite)
+    #   #Lib.lib.virtualbox.register_machine(m)
+    #   interface.clone_to(m, clone_mode, clone_options).wait(&block)
+    #   vm = new(m)
+    #   vm
+    # rescue Exceptions::ObjectNotFoundException
+    #   nil
+    # rescue Exceptions::COMException
+    #   # NOTE: This only happens on JRuby/Windows
+    #   nil
+    # end
 
     # Take a snapshot of the current state of the machine. This method can be
     # called while the VM is running and also while it is powered off. This
