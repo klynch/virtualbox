@@ -64,6 +64,9 @@ module VirtualBox
     #   strings are provided, then all metrics are assumed.
     # @param [COM::Interface::AbstractInterface] objects The list of objects.
     #   If no objects are provided, then all metrics are assumed.
+    # @param Integer period Interval in seconds between taking two samples.
+    # @param Integer count  Number of samples retained internally for
+    #   aggregate metrics.
     # @return [COM::Interface::PerformanceMetric] The affected metrics.
     def setup_metrics(metric_names, objects, period=1, count=1)
       metric_names = [metric_names] unless metric_names.is_a? Array
