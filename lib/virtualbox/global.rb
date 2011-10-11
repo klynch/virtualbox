@@ -44,6 +44,7 @@ module VirtualBox
     relationship :system_properties, :SystemProperties, :lazy => true
     relationship :host, :Host, :lazy => true
     relationship :dhcp_servers, :DHCPServer, :lazy => true
+    relationship :performance_collector, :PerformanceCollector, :lazy => true
 
     @@global_data = nil
 
@@ -87,7 +88,8 @@ module VirtualBox
         :extra_data => lambda { lib.virtualbox },
         :system_properties => lambda { lib.virtualbox.system_properties },
         :host => lambda { lib.virtualbox.host },
-        :dhcp_servers => lambda { lib.virtualbox.dhcp_servers }
+        :dhcp_servers => lambda { lib.virtualbox.dhcp_servers },
+        :performance_collector => lambda { lib.virtualbox.performance_collector }
       }
 
       populate_relationship(name, relationships[name].call)

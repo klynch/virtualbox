@@ -24,6 +24,8 @@ module VirtualBox
   autoload :NATEngine, 'virtualbox/nat_engine'
   autoload :NATForwardedPort, 'virtualbox/nat_forwarded_port'
   autoload :NetworkAdapter, 'virtualbox/network_adapter'
+  autoload :PerformanceCollector, 'virtualbox/performance_collector'
+  autoload :PerformanceMetric, 'virtualbox/performance_metric'
   autoload :Proxies, 'virtualbox/proxies'
   autoload :SharedFolder, 'virtualbox/shared_folder'
   autoload :Snapshot, 'virtualbox/snapshot'
