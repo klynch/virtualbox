@@ -168,11 +168,11 @@ class COMImplementerFFITest < Test::Unit::TestCase
       end
 
       should "replace out array types with two parameters" do
-        @counter_pointer = mock("count_pointer")
+        @count_pointer = mock("count_pointer")
         @pointer = mock("pointer")
 
         @instance.expects(:pointer_for_type).with(VirtualBox::COM::T_UINT32).returns(@count_pointer)
-        @instance.expects(:pointer_for_type).with(:foo).returns(@pointer)
+        @instance.expects(:pointer_for_type).with(:pointer).returns(@pointer)
         assert_equal [@count_pointer, @pointer], @instance.spec_to_args([[:out, [:foo]]])
       end
     end
