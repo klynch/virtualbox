@@ -151,7 +151,7 @@ module VirtualBox
               # For arrays we need two pointers: one for size, and one for the
               # actual array
               results << pointer_for_type(T_UINT32)
-              results << pointer_for_type(item[1][0])
+              results << pointer_for_type(:pointer)
             else
               results << pointer_for_type(item[1])
             end
