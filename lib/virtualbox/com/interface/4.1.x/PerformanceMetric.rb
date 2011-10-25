@@ -6,7 +6,7 @@ module VirtualBox
           IID_STR = "2a1a60ae-9345-4019-ad53-d34ba41cbfe9"
 
           property :metric_name, WSTRING, :readonly => true
-          property :object, :pointer, :readonly => true
+          property :object, :NSISupports, :readonly => true
           property :description, WSTRING, :readonly => true
           property :period, T_UINT64, :readonly => true
           property :count, T_UINT64, :readonly => true
