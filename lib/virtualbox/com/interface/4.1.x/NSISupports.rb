@@ -8,9 +8,9 @@ module VirtualBox
           # This has no parent
           parent nil
 
-          function :QueryInterface, :pointer, [:pointer]
-          function :AddRef, nil, []
-          function :Release, nil, []
+          function :query_interface, :pointer, [:pointer]
+          function :add_ref, nil, []
+          function :release, nil, []
         end
       end
     end
