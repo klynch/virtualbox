@@ -5,6 +5,8 @@ module VirtualBox
         # This interface is actually only used with the FFI implementer but
         # is created here to allow easier usage with the FFI abstractions.
         class NSISupports < AbstractInterface
+          IID_STR = "00000000-0000-0000-c000-000000000046"
+
           # This has no parent
           parent nil
 

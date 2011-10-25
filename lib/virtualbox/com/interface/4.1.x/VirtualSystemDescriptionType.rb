@@ -3,6 +3,8 @@ module VirtualBox
     module Interface
       module Version_4_1_X
         class VirtualSystemDescriptionType < AbstractEnum
+          IID_STR = "303c0900-a746-4612-8c67-79003e91f459"
+
           map :ignore => 1,
               :os => 2,
               :name => 3,

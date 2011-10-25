@@ -3,7 +3,7 @@ module VirtualBox
     module Interface
       module Version_4_1_X
         class USBController < AbstractInterface
-          IID = "238540fa-4b73-435a-a38e-4e1d9eab5c17"
+          IID_STR = "6fdcccc5-abd3-4fec-9387-2ad3914fc4a8"
 
           property :enabled, T_BOOL
           property :enabled_ehci, T_BOOL

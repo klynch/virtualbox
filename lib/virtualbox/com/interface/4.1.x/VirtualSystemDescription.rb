@@ -3,7 +3,7 @@ module VirtualBox
     module Interface
       module Version_4_1_X
         class VirtualSystemDescription < AbstractInterface
-          IID = "d7525e6c-531a-4c51-8e04-41235083a3d8"
+          IID_STR = "d7525e6c-531a-4c51-8e04-41235083a3d8"
 
           property :count, T_UINT32, :readonly => true
 

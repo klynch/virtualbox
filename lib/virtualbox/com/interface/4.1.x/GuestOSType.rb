@@ -3,7 +3,7 @@ module VirtualBox
     module Interface
       module Version_4_1_X
         class GuestOSType < AbstractInterface
-          IID = "cfe9e64c-4430-435b-9e7c-e3d8e417bd58"
+          IID_STR = "432c1546-1354-4abf-bf08-878a32a373f5"
 
           property :family_id, WSTRING, :readonly => true
           property :family_description, WSTRING, :readonly => true

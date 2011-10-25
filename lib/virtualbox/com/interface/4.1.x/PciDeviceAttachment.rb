@@ -3,7 +3,7 @@ module VirtualBox
     module Interface
       module Version_4_1_X
         class PciDeviceAttachment < AbstractInterface
-          IID_STR = "91F33D6F-E621-4F70-A77E-15F0E3C714D5"
+          IID_STR = "91f33d6f-e621-4f70-a77e-15f0e3c714d5"
 
           property :name, WSTRING, :readonly => true
           property :is_physical_device, T_BOOL, :readonly => true

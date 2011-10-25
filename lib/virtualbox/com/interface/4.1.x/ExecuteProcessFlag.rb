@@ -3,6 +3,8 @@ module VirtualBox
     module Interface
       module Version_4_1_X
         class ExecuteProcessFlag < AbstractEnum
+          IID_STR = "286ceb91-5f66-4c96-9845-4483e90e00ae"
+
           map :none => 0,
               :wait_for_process_start_only => 1,
               :ignore_orphaned_processes => 2,

@@ -3,7 +3,7 @@ module VirtualBox
     module Interface
       module Version_4_1_X
         class Guest < AbstractInterface
-          IID = "af2766d9-ebff-455f-b5ce-c6f855b8f584"
+          IID_STR = "ed109b6e-0578-4b17-8ace-52646789f1a0"
 
           property :os_type_id, WSTRING, :readonly => true
           property :additions_run_level, :AdditionsRunLevelType, :readonly => true

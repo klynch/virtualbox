@@ -3,7 +3,7 @@ module VirtualBox
     module Interface
       module Version_4_1_X
         class Console < AbstractInterface
-          IID = "6375231a-c17c-464b-92cb-ae9e128d71c3"
+          IID_STR = "1968b7d3-e3bf-4ceb-99e0-cb7c913317bb"
 
           property :machine, :Machine, :readonly => true
           property :state, :MachineState, :readonly => true

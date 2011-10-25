@@ -3,6 +3,8 @@ module VirtualBox
     module Interface
       module Version_4_1_X
         class AdditionsFacilityClass < AbstractEnum
+          IID_STR = "446451b2-c88d-4e5d-84c9-91bc7f533f5f"
+
           map :none        => 0,
               :driver      => 10,
               :service     => 30,

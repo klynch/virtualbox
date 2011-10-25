@@ -3,7 +3,7 @@ module VirtualBox
     module Interface
       module Version_4_1_X
         class Machine < AbstractInterface
-          IID_STR = "99404f50-dd10-40d3-889b-dd2f79f1e95e"
+          IID_STR = "5eaa9319-62fc-4b0a-843c-0cb1940f8a91"
 
           property :parent, :VirtualBox, :readonly => true
           property :accessible, T_BOOL, :readonly => true

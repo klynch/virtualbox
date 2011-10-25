@@ -3,7 +3,7 @@ module VirtualBox
     module Interface
       module Version_4_1_X
         class AdditionsFacility < AbstractInterface
-          IID = "54992946-6af1-4e49-98ec-58b558b7291e"
+          IID_STR = "54992946-6af1-4e49-98ec-58b558b7291e"
 
           property :class_type, :AdditionsFacilityClass, :readonly => true
           property :last_updated, T_INT64, :readonly => true

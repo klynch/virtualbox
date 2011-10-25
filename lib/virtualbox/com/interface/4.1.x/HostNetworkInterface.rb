@@ -3,7 +3,7 @@ module VirtualBox
     module Interface
       module Version_4_1_X
         class HostNetworkInterface < AbstractInterface
-          IID = "ce6fae58-7642-4102-b5db-c9005c2320a8"
+          IID_STR = "ce6fae58-7642-4102-b5db-c9005c2320a8"
 
           property :name, WSTRING, :readonly => true
           property :id, WSTRING, :readonly => true

@@ -3,7 +3,7 @@ module VirtualBox
     module Interface
       module Version_4_1_X
         class DHCPServer < AbstractInterface
-          IID = "6cfe387c-74fb-4ca7-bff6-973bec8af7a3"
+          IID_STR = "6cfe387c-74fb-4ca7-bff6-973bec8af7a3"
 
           property :enabled, T_BOOL
           property :ip_address, WSTRING, :readonly => true

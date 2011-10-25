@@ -3,7 +3,7 @@ module VirtualBox
     module Interface
       module Version_4_1_X
         class StorageDeviceChangedEvent < AbstractInterface
-          IID = "8a5c2dce-e341-49d4-afce-c95979f7d70c"
+          IID_STR = "715212bf-da59-426e-8230-3831faa52c56"
 
           property :storage_device, :MediumAttachment, :readonly => true
           property :removed, T_BOOL, readonly => true

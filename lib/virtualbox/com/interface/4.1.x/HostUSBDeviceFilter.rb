@@ -3,7 +3,7 @@ module VirtualBox
     module Interface
       module Version_4_1_X
         class HostUSBDeviceFilter < AbstractInterface
-          IID = "4cc70246-d74a-400f-8222-3900489c0374"
+          IID_STR = "4cc70246-d74a-400f-8222-3900489c0374"
 
           parent :USBDeviceFilter
 

@@ -3,7 +3,7 @@ module VirtualBox
     module Interface
       module Version_4_1_X
         class AudioAdapter < AbstractInterface
-          IID = "921873db-5f3f-4b69-91f9-7be9e535a2cb"
+          IID_STR = "921873db-5f3f-4b69-91f9-7be9e535a2cb"
 
           property :enabled, T_BOOL
           property :audio_controller, :AudioControllerType

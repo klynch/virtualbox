@@ -3,7 +3,7 @@ module VirtualBox
     module Interface
       module Version_4_1_X
         class Progress < AbstractInterface
-          IID = "856aa038-853f-42e2-acf7-6e7b02dbe294"
+          IID_STR = "c20238e4-3221-4d3f-8891-81ce92d9f913"
 
           property :id, WSTRING, :readonly => true
           property :description, WSTRING, :readonly => true

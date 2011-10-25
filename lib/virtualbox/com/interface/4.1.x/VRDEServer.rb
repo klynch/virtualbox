@@ -3,7 +3,7 @@ module VirtualBox
     module Interface
       module Version_4_1_X
         class VRDEServer < AbstractInterface
-          IID = "72e671bc-1712-4052-ad6b-e45e76d9d3e4"
+          IID_STR = "d38de40a-c2c1-4e95-b5a4-167b05f5694c"
 
           property :enabled, T_BOOL
           property :auth_type, :AuthType

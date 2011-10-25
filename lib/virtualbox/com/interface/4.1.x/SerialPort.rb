@@ -3,7 +3,7 @@ module VirtualBox
     module Interface
       module Version_4_1_X
         class SerialPort < AbstractInterface
-          IID = "937f6970-5103-4745-b78e-d28dcf1479a8"
+          IID_STR = "937f6970-5103-4745-b78e-d28dcf1479a8"
 
           property :slot, T_UINT32, :readonly => true
           property :enabled, T_BOOL

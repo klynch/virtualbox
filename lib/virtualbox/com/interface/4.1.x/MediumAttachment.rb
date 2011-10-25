@@ -3,7 +3,7 @@ module VirtualBox
     module Interface
       module Version_4_1_X
         class MediumAttachment < AbstractInterface
-          IID = "e58eb3eb-8627-428b-bdf8-34487c848de5"
+          IID_STR = "b5dfbb8c-7498-48c3-bf10-78fc60f064e1"
 
           property :medium, :Medium, :readonly => true
           property :controller, WSTRING, :readonly => true

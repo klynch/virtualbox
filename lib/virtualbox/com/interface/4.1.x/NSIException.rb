@@ -3,7 +3,7 @@ module VirtualBox
     module Interface
       module Version_4_1_X
         class NSIException < AbstractInterface
-          IID = "f3a8d3b4-c424-4edc-8bf6-8974c983ba78"
+          IID_STR "f3a8d3b4-c424-4edc-8bf6-8974c983ba78"
 
           property :message, WSTRING, :readonly => true
           property :result, T_UINT32, :readonly => true

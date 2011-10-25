@@ -3,6 +3,8 @@ module VirtualBox
     module Interface
       module Version_4_1_X
         class SettingsVersion < AbstractEnum
+          IID_STR = "52bd6f5f-1adb-4493-975d-581a9c4b803f"
+
           map :v1_0 => 1,
               :v1_1 => 2,
               :v1_2 => 3,

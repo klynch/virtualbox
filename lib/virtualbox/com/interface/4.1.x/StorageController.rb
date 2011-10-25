@@ -3,7 +3,7 @@ module VirtualBox
     module Interface
       module Version_4_1_X
         class StorageController < AbstractInterface
-          IID = "6bf8335b-d14a-44a5-9b45-ddc49ce7d5b2"
+          IID_STR = "a1556333-09b6-46d9-bfb7-fc239b7fbe1e"
 
           property :name, WSTRING, :readonly => true
           property :max_devices_per_port_count, T_UINT32, :readonly => true

@@ -3,7 +3,7 @@ module VirtualBox
     module Interface
       module Version_4_1_X
         class Snapshot < AbstractInterface
-          IID = "1a2d0551-58a4-4107-857e-ef414fc42ffc"
+          IID_STR = "0472823b-c6e7-472a-8e9f-d732e86b8463"
 
           property :id, WSTRING, :readonly => true
           property :name, WSTRING

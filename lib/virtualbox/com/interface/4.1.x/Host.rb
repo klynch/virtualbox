@@ -3,7 +3,7 @@ module VirtualBox
     module Interface
       module Version_4_1_X
         class Host < AbstractInterface
-          IID_STR = "e380cbfc-ae65-4fa6-899e-45ded6b3132a"
+          IID_STR = "dab4a2b8-c735-4f08-94fc-9bec84182e2f"
 
           property :dvd_drives, [:Medium], :readonly => true
           property :floppy_drives, [:Medium], :readonly => true

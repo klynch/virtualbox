@@ -3,7 +3,7 @@ module VirtualBox
     module Interface
       module Version_4_1_X
         class NetworkAdapter < AbstractInterface
-          IID = "65607a27-2b73-4d43-b4cc-0ba2c817fbde"
+          IID_STR = "8b2e705c-0547-4008-b7bc-788757346092"
 
           property :adapter_type, :NetworkAdapterType
           property :slot, T_UINT32, :readonly => true

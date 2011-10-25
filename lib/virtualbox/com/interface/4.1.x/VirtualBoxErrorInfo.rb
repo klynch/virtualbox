@@ -3,7 +3,7 @@ module VirtualBox
     module Interface
       module Version_4_1_X
         class VirtualBoxErrorInfo < AbstractInterface
-          IID = "4b86d186-407e-4f9e-8be8-e50061be8725"
+          IID_STR = "e053d3c0-f493-491b-a735-3a9f0b1feed4"
 
           parent :NSIException
 

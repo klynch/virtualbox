@@ -3,7 +3,7 @@ module VirtualBox
     module Interface
       module Version_4_1_X
         class NATEngine < AbstractInterface
-          IID = "4b286616-eb03-11de-b0fb-1701eca42246"
+          IID_STR = "4b286616-eb03-11de-b0fb-1701eca42246"
 
           property :network, WSTRING
           property :host_ip, WSTRING

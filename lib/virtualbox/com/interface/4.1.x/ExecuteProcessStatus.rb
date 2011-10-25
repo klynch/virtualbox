@@ -3,6 +3,8 @@ module VirtualBox
     module Interface
       module Version_4_1_X
         class ExecuteProcessStatus < AbstractEnum
+          IID_STR = "153768d9-d971-4098-8b5a-c5cb1ab9ea88"
+
           map :undefined => 0,
               :started   => 1,
               :terminated_normally => 2,

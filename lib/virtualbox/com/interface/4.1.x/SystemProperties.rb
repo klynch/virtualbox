@@ -3,7 +3,7 @@ module VirtualBox
     module Interface
       module Version_4_1_X
         class SystemProperties < AbstractInterface
-          IID = "8030645c-8fef-4320-bb7b-c829f00069dc"
+          IID_STR = "8a0ab9ab-48c1-4d04-954b-4a751413d084"
 
           property :min_guest_ram, T_UINT32, :readonly => true
           property :max_guest_ram, T_UINT32, :readonly => true

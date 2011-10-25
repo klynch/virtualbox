@@ -3,7 +3,7 @@ module VirtualBox
     module Interface
       module Version_4_1_X
         class Appliance < AbstractInterface
-          IID = "e3ba9ab9-ac2c-4266-8bd2-91c4bf721ceb"
+          IID_STR = "3059cf9e-25c7-4f0b-9fa5-3c42e441670b"
 
           property :path, WSTRING, :readonly => true
           property :disks, [WSTRING], :readonly => true

@@ -3,7 +3,7 @@ module VirtualBox
     module Interface
       module Version_4_1_X
         class SharedFolder < AbstractInterface
-          IID = "64637bb2-9e17-471c-b8f3-f8968dd9884e"
+          IID_STR = "8388da11-b559-4574-a5b7-2bd7acd5cef8"
 
           property :name, WSTRING, :readonly => true
           property :host_path, WSTRING, :readonly => true

@@ -3,7 +3,7 @@ module VirtualBox
     module Interface
       module Version_4_1_X
         class BIOSSettings < AbstractInterface
-          IID = "38b54279-dc35-4f5e-a431-835b867c6b5e"
+          IID_STR = "38b54279-dc35-4f5e-a431-835b867c6b5e"
 
           property :logo_fade_in, T_BOOL
           property :logo_fade_out, T_BOOL
