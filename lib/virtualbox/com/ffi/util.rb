@@ -135,7 +135,14 @@ module VirtualBox
               "rtc" => "RTC",
               "utc" => "UTC",
               "io" => "IO",
-              "vm" => "VM"
+              "vm" => "VM",
+              "pae" => "PAE",
+              "patm" => "PATM",
+              "csam" => "CSAM",
+              "nmi" => "NMI",
+              "vhwa" => "VHWA",
+              "cad" => "CAD",
+              "ipc" => "IPC"
             }
 
             parts = string.to_s.split(/_/).collect do |part|
