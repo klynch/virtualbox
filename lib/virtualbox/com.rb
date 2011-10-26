@@ -16,6 +16,7 @@ module VirtualBox
     autoload :BaseInterface, 'virtualbox/com/base_interface'
     autoload :FFI, 'virtualbox/com/ffi'
     autoload :FFIInterface, 'virtualbox/com/ffi_interface'
+    autoload :IID, 'virtualbox/com/iid'
     autoload :Implementer, 'virtualbox/com/implementer'
     autoload :MSCOMInterface, 'virtualbox/com/mscom_interface'
     autoload :NilInterface, 'virtualbox/com/nil_interface'

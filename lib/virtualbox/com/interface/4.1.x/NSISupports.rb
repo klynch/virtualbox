@@ -13,6 +13,20 @@ module VirtualBox
           function :query_interface, :pointer, [:pointer]
           function :add_ref, nil, []
           function :release, nil, []
+
+          def is_interface? interface
+            begin
+              true if query_interface(::VirtualBox::COM::IID.new(implementer.interface_klass(interface)::IID_STR).to_ptr)
+            rescue Exception
+              false
+            end
+          end
+
+          def to_interface interface
+            klass = implementer.interface_klass(interface)
+            ptr = query_interface(::VirtualBox::COM::IID.new(klass::IID_STR).to_ptr)
+            klass.new(implementer.class, implementer.lib, ptr)
+          end
         end
       end
     end
